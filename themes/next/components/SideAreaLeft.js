@@ -57,7 +57,7 @@ const SideAreaLeft = props => {
             )}
 
             <div
-              key={locale.NAV.ABOUT}
+              key={showToc ? locale.NAV.ABOUT : ''}
               className='mb-5 bg-white dark:bg-hexo-black-gray duration-200 py-6'>
               <InfoCard {...props} />
               <>
@@ -66,11 +66,17 @@ const SideAreaLeft = props => {
                     <strong className='font-medium'>{postCount}</strong>
                     {locale.COMMON.POSTS}
                   </span>
-                  <span className='px-1 busuanzi_container_site_uv hidden'>
-                    |{' '}
-                    <strong className='pl-1 busuanzi_value_site_uv font-medium' />
-                    {locale.COMMON.VISITORS}
-                  </span>
+                  {
+                    /**
+                     * Don't show visitor counter.
+                     *
+                     * <span className='px-1 busuanzi_container_site_uv hidden'>
+                     *   |{' '}
+                     *   <strong className='pl-1 busuanzi_value_site_uv font-medium' />
+                     *   {locale.COMMON.VISITORS}
+                     * </span>
+                     */
+                  }
                   {/* <span className='px-1 busuanzi_container_site_pv hidden'>
                 | <strong className='pl-1 busuanzi_value_site_pv font-medium'/>{locale.COMMON.VIEWS}</span> */}
                 </div>
