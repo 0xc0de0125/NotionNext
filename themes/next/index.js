@@ -260,6 +260,7 @@ const LayoutSearch = props => {
  * @returns
  */
 const Layout404 = props => {
+  const { locale } = useGlobal()
   const router = useRouter()
   useEffect(() => {
     // 延时3秒如果加载失败就返回首页
@@ -282,7 +283,7 @@ const Layout404 = props => {
             404
           </h2>
           <div className='inline-block text-left h-32 leading-10 items-center'>
-            <h2 className='m-0 p-0'>页面无法加载，即将返回首页</h2>
+            <h2 className='m-0 p-0'>{locale.COMMON.PAGE_NOT_FOUND}</h2>
           </div>
         </div>
       </div>
