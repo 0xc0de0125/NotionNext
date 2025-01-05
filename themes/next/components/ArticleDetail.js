@@ -84,10 +84,15 @@ export default function ArticleDetail(props) {
                       {post.lastEditedDay}{' '}
                     </span>
 
-                    <div className='hidden busuanzi_container_page_pv font-light mr-2'>
-                      <i className='mr-1 fas fa-eye' />
-                      <span className='mr-2 busuanzi_value_page_pv' />
-                    </div>
+                    {
+                      /**
+                       * Don't show page view counter.
+                       * <div className='hidden busuanzi_container_page_pv font-light mr-2'>
+                       *   <i className='mr-1 fas fa-eye' />
+                       *   <span className='mr-2 busuanzi_value_page_pv' />
+                       * </div>
+                       */
+                    }
                   </>
                 )}
               </div>
@@ -124,7 +129,7 @@ export default function ArticleDetail(props) {
 
             <section className='flex justify-between'>
               {/* 分类 */}
-              {post.category && (
+              {Object.keys(post.category).length > 0 && (
                 <>
                   <div className='cursor-pointer my-auto text-md mr-2 hover:text-black dark:hover:text-white border-b dark:text-gray-500 border-dashed'>
                     <SmartLink href={`/category/${post.category}`} legacyBehavior>
@@ -140,7 +145,7 @@ export default function ArticleDetail(props) {
               {/* 标签列表 */}
               {post?.type === 'Post' && (
                 <>
-                  {post.tagItems && (
+                  {Object.keys(post.tagItems).length > 0 && (
                     <div className='flex items-center flex-nowrap leading-8 p-1 py-4 overflow-x-auto'>
                       <div className='hidden md:block dark:text-gray-300 whitespace-nowrap'>
                         {locale.COMMON.TAGS}:&nbsp;
