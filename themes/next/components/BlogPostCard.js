@@ -102,7 +102,7 @@ const BlogPostCard = ({ post, index, showSummary }) => {
             </div>
           )}
 
-          <div className='text-right border-t pt-8 border-dashed'>
+          <div className='text-center border-t pt-8 border-dashed'>
             <SmartLink
               href={post?.href}
               className='hover:bg-opacity-100 hover:underline transform duration-300 p-3 text-white bg-gray-800 cursor-pointer'>
